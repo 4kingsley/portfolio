@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uchenna Kingsley Okeke - Digital Marketing Manager</title>
+    <!-- Google Fonts: Poppins for headings, Open Sans for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #3f51b5; /* A vibrant blue */
+            --secondary-color: #f5f5f5; /* Light grey for sections */
+            --dark-color: #212121; /* Dark grey for text/backgrounds */
+            --light-text: #ffffff;
+            --dark-text: #333333;
+            --accent-color: #ff4081; /* Pink for highlights */
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-text);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            font-size: 2.5em;
+            color: var(--dark-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--dark-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: var(--light-text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-left: 30px;
+        }
+
+        .nav-list a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-list a:hover::after,
+        .nav-list a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+            color: var(--light-text);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            top: -50px;
+            left: -50px;
+            animation: moveShape 10s infinite alternate ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            bottom: -50px;
+            right: -50px;
+            animation: moveShape 12s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes moveShape {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--light-text);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: #e0326e;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-text);
+            color: var(--dark-text);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-category li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-category li::before {
+            content: '\f00c'; /* Checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Services / What I Do section */
+        .services {
+            background-color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light-text);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card i {
+            font-size: 3.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--light-text);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+            flex-grow: 1; /* Allows info to take up remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portfolio-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .portfolio-info p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-info .tags {
+            font-size: 0.8em;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .view-case-study {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            align-self: flex-start; /* Aligns button to the left */
+        }
+
+        .view-case-study:hover {
+            color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-info-item i {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-right: 15px;
+            padding-top: 5px; /* Adjust for icon alignment with text */
+        }
+
+        .contact-info-item div {
+            flex: 1;
+        }
+
+        .contact-info-item h4 {
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .contact-info-item p {
+            margin: 0;
+            color: #666;
+        }
+
+        .contact-form-container {
+            flex: 2;
+            min-width: 300px;
+            background-color: var(--light-text);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #3041a0;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9em;
+        }
+
+        .footer .social-links a {
+            color: var(--light-text);
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding-bottom: 10px;
+            }
+
+            .nav-list {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-list li {
+                margin: 0 15px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image, .about-text {
+                min-width: unset;
+                width: 100%;
+            }
+
+            .skills-grid, .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-form-container, .contact-info {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.8em; }
+            .section-title { font-size: 1.8em; }
+            .hero { padding: 80px 15px; }
+            .hero h1 { font-size: 2.2em; }
+            .hero p { font-size: 1em; }
+            .btn { padding: 12px 25px; }
+            .contact-form-container { padding: 30px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="logo">Uchenna K.O.</a>
+            <ul class="nav-list">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content container">
+                <h1>Uchenna Kingsley Okeke: Driving Measurable Growth Through Innovative Digital Marketing</h1>
+                <p>Specializing in SEO, SEM, Paid Advertising, and data-backed strategies that consistently deliver 10-40% increases in traffic, leads, and engagement.</p>
+                <a href="#portfolio" class="btn">View My Portfolio</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Replace with your actual headshot image URL -->
+                        <img src="https://via.placeholder.com/400x400?text=Your+Professional+Headshot" alt="Uchenna Kingsley Okeke Headshot">
+                    </div>
+                    <div class="about-text">
+                        <h3>A Results-Driven Digital Marketing Leader</h3>
+                        <p>I am Uchenna Kingsley Okeke, a dynamic Digital Marketing Leader with a proven track record of designing and executing high-impact campaigns for over eight years. My passion lies in driving measurable growth, having consistently delivered 10-40% increases in website traffic, brand awareness, qualified leads, customer retention, and engagement for diverse organizations.</p>
+                        <p>My methodology is rooted in leveraging in-depth market research, advanced CRM systems, and sound design principles to create compelling, data-backed strategies. I excel at leading and managing high-performing teams, fostering cross-functional collaboration, and implementing innovative, customer-centric approaches that generate significant ROI.</p>
+
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-chart-line"></i> Core Digital Marketing</h4>
+                                <ul>
+                                    <li>SEO & SEM</li>
+                                    <li>Paid Advertising</li>
+                                    <li>Email Marketing</li>
+                                    <li>Content Strategy</li>
+                                    <li>Social Media Management</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4><i class="fas fa-lightbulb"></i> Analysis & Strategy</h4>
+                                <ul>
+                                    <li>Market Research</li>
+                                    <li>Competitive Analysis</li>
+                                    <li>Data Analysis</li>
+                                    <li>Strategic Planning</li>
+                                    <li>CRM Systems</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4><i class="fas fa-brush"></i> Creative & Technical</h4>
+                                <ul>
+                                    <li>Content Creation (Video, Graphics)</li>
+                                    <li>WordPress Development</li>
+                                    <li>Adobe Photoshop/Premiere Pro</li>
+                                    <li>Canva & Wix</li>
+                                    <li>AI Integration (ChatGPT)</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4><i class="fas fa-user-friends"></i> Soft Skills</h4>
+                                <ul>
+                                    <li>Leadership</li>
+                                    <li>Time Management</li>
+                                    <li>Critical Thinking</li>
+                                    <li>Creativity & Innovation</li>
+                                    <li>Collaboration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional About Me details (Education, Certs, Awards) can go here or be condensed -->
+                <div style="margin-top: 60px; text-align: center;">
+                    <h3>Education & Certifications</h3>
+                    <p><strong>University Of Port Harcourt:</strong> Bachelor of Science: Computer Science (2014-2018)</p>
+                    <p><strong>Certifications:</strong> Online Digital Marketing (New Horizons), Diploma in Multimedia (New Horizons), Certified Social Media Marketing, SEO, and Web Analytics Master Courses (DigitalVidya), Digital Marketing (Google Digital Skills for Africa), Critical Thinking (LinkedIn), Soft-skills (Jobberman).</p>
+                    <p><strong>Award:</strong> Creative Genius - Blackcod Asset Management</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (What I Do) -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">What I Do</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-search"></i>
+                        <h3>SEO & SEM Strategy</h3>
+                        <p>Elevate your search engine rankings and drive qualified organic and paid traffic through expert optimization and campaign management.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-ad"></i>
+                        <h3>Paid Advertising Management</h3>
+                        <p>Maximize ROI on Google Ads, social media campaigns, and display advertising with precision targeting and continuous optimization.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Marketing Automation</h3>
+                        <p>Build engaged subscriber lists, craft compelling email campaigns, and automate workflows for lead nurturing and customer retention.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>Social Media & Content</h3>
+                        <p>Develop engaging content strategies and manage social media presence to build brand awareness and foster community.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chart-area"></i>
+                        <h3>Data Analysis & Reporting</h3>
+                        <p>Translate complex analytics into actionable insights, providing clear reports that inform strategy and demonstrate campaign effectiveness.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Creative Content Production</h3>
+                        <p>From captivating graphics to engaging videos, I produce high-quality visual content that resonates with your target audience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">My Work: Proven Case Studies</h2>
+                <div class="portfolio-grid">
+
+                    <!-- Project 1: Vines Realty Afrique Limited -->
+                    <div class="portfolio-item">
+                        <!-- Placeholder Image: Replace with actual project screenshot/graphic -->
+                        <img src="https://via.placeholder.com/400x220?text=Vines+Realty+Case+Study" alt="Vines Realty Afrique Limited Case Study">
+                        <div class="portfolio-info">
+                            <h3>Vines Realty Afrique Limited</h3>
+                            <p>Achieved 600% monthly organic traffic growth and 32% Instagram follower increase through strategic SEO, influencer marketing, and brand ambassador campaigns.</p>
+                            <div class="tags">#SEO #InfluencerMarketing #BrandGrowth #ContentStrategy</div>
+                            <a href="#" class="view-case-study">View Case Study <i class="fas fa-arrow-right"></i></a>
+                            <!-- In Blogger, this "View Case Study" link would likely go to a new page you create for the detailed case study, or simply open a modal/popup if you implement that advanced JS. For simplicity, it can link to a detailed post. -->
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Medison Specialist Women’s Hospital -->
+                    <div class="portfolio-item">
+                        <!-- Placeholder Image: Replace with actual project screenshot/graphic -->
+                        <img src="https://via.placeholder.com/400x220?text=Medison+Hospital+Case+Study" alt="Medison Specialist Women’s Hospital Case Study">
+                        <div class="portfolio-info">
+                            <h3>Medison Specialist Women’s Hospital</h3>
+                            <p>Boosted website traffic by 1200% with SEO-optimized blog posts, reduced bounce rate by 20% through site optimization, and increased followers by 30% with visuals.</p>
+                            <div class="tags">#SEO #ContentMarketing #WebsiteOptimization #VisualContent</div>
+                            <a href="#" class="view-case-study">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Blackcod Asset Management -->
+                    <div class="portfolio-item">
+                        <!-- Placeholder Image: Replace with actual project screenshot/graphic -->
+                        <img src="https://via.placeholder.com/400x220?text=Blackcod+Asset+Case+Study" alt="Blackcod Asset Management Case Study">
+                        <div class="portfolio-info">
+                            <h3>Blackcod Asset Management</h3>
+                            <p>Developed and managed SEO-friendly WordPress sites, created effective lead generation strategies, resulting in a 25% increase in qualified leads.</p>
+                            <div class="tags">#WordPressSEO #LeadGeneration #LocalSEO #MarketingMaterial</div>
+                            <a href="#" class="view-case-study">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Netnaija.com -->
+                    <div class="portfolio-item">
+                        <!-- Placeholder Image: Replace with actual project screenshot/graphic -->
+                        <img src="https://via.placeholder.com/400x220?text=Netnaija.com+Case+Study" alt="Netnaija.com Case Study">
+                        <div class="portfolio-info">
+                            <h3>Netnaija.com</h3>
+                            <p>Maintained strong social media presence, managed content, and implemented tactics leading to 34% growth in social shares and 28% increase in website traffic.</p>
+                            <div class="tags">#SocialMedia #ContentManagement #Analytics #MarketResearch</div>
+                            <a href="#" class="view-case-study">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Add more portfolio items as needed -->
+                     <div class="portfolio-item">
+                        <!-- Placeholder Image: Replace with actual project screenshot/graphic -->
+                        <img src="https://via.placeholder.com/400x220?text=Training+Sensei+Case+Study" alt="Training Sensei Case Study">
+                        <div class="portfolio-info">
+                            <h3>Training Sensei (Manchester, UK)</h3>
+                            <p>Crafted compelling videos and animations, created social media campaigns for lead generation, and developed strategies to increase brand awareness and sales.</p>
+                            <div class="tags">#VideoContent #SocialMediaCampaigns #LeadGeneration #BrandAwareness</div>
+                            <a href="#" class="view-case-study">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                     <div class="portfolio-item">
+                        <!-- Placeholder Image: Replace with actual project screenshot/graphic -->
+                        <img src="https://via.placeholder.com/400x220?text=Koï+Restaurant+Case+Study" alt="Koï, Restaurant & Lounge Case Study">
+                        <div class="portfolio-info">
+                            <h3>Koï, Restaurant & Lounge</h3>
+                            <p>Monitored performance metrics, produced high-quality visuals and captions for engagement, and reduced customer support requests by 20% through social interaction.</p>
+                            <div class="tags">#SocialMediaManagement #VisualContent #CommunityEngagement #CustomerService</div>
+                            <a href="#" class="view-case-study">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Me</h4>
+                                <p>ucheokeke61@gmail.com</p>
+                            </div>
+                        </div>
